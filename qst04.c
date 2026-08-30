@@ -37,7 +37,7 @@ int main()
 	 	else
 	 	{
 			n = (count(1, string)) - 1;				//faz chamada da recursao para contagem do tamanho de string
- 			printf("%s", inverte(n, string));		//printa a string ivertida retornada pela função iterativa
+ 			printf("%s\n", inverte(n, string));		//printa a string ivertida retornada pela função iterativa
 			scanf("%s[^\n]", string);	
 	 	}
  		
