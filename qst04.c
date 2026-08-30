@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-int count(int posi_atual, char str[])
+int count(int posi_atual, char str[])				//recursao para contagem percorrendo array 
 {
-	if(*str == '\0')return 0;
+	if(*str == '\0')return 0;						//condicao de parada recursiva
 	else return (posi_atual + count(posi_atual, str + 1));
 }
-void swap(char *str, int i, int posi_f)
-{
+void swap(char *str, int i, int posi_f) 			//funcao para trocar os elementos de posicao
+{													//manipulacao de ponteiros para percorrer string
 	
 	char temp = *(str + i);
 	*(str + i) = *(str + posi_f);
@@ -16,9 +16,9 @@ void swap(char *str, int i, int posi_f)
 char *inverte(int tam, char str[])
 {
 	int i = 0;
-	for(i; i <= tam/2; i++)
+	for(i; i <= tam/2; i++)							//condiciona para metade do array para nao trocar posicoes equidistantes duas vezes (ficaria como a string original)
 	{
-		swap(str, i, tam - i);
+		swap(str, i, tam - i);						//chama a funcao passando valores de posicoes equidistantes para troca
 	}
 	return str;
 }
@@ -30,15 +30,15 @@ int main()
  	int flag = 1; 
  	printf("Iniciando iteracao...\n");
  	printf("Digite uma palavra ou frase(ou fim para interromper):\n");
-	fgets(string, 100, stdin);
+	fgets(string, 100, stdin);						//recebe string para nao começar o loop com string vazio
 	while(flag != 0)
 	{
-	 	if((string [0] == 'f' || string[0] == 'F') && (string[1] == 'i' || string[1] == 'I') && (string[2] == 'm' || string[2] == 'M')) flag = 0;	
+	 	if((string [0] == 'f' || string[0] == 'F') && (string[1] == 'i' || string[1] == 'I') && (string[2] == 'm' || string[2] == 'M')) flag = 0;	 //verifica se string inserida é "fim"
 	 	else
 	 	{
-			n = (count(1, string)) - 1;
- 			printf("%s\n", inverte(n, string));
-	 		fgets(string, 100, stdin);
+			n = (count(1, string)) - 1;				//faz chamada da recursao para contagem do tamanho de string
+ 			printf("%s\n", inverte(n, string));		//printa a string ivertida retornada pela função iterativa
+	 		fgets(string, 100, stdin);				//recebe outra string inserida e repete a iteração
 			
 	 	}
  		
