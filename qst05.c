@@ -13,8 +13,11 @@ int soma_num(int num)
 
 int main()
 {
-	int n;
-	scanf("%d", &n);
-	printf("%d\n",(soma_num(n)));
+	int n, flag = 0;
+	while(flag < 50)
+	{
+		scanf("%d", &n);
+		printf("%d\n",(soma_num(n)));
+	}
 	return 0;
 }
