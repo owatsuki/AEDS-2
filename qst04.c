@@ -28,8 +28,8 @@ int main()
 	char string[100];
  	int n;
  	int flag = 1; 
- 	printf("Iniciando iteracao...\n");
- 	printf("Digite uma palavra ou frase(ou fim para interromper):\n");
+// 	printf("Iniciando iteracao...\n");
+// 	printf("Digite uma palavra ou frase(ou fim para interromper):\n");
 	fgets(string, 100, stdin);						//recebe string para nao começar o loop com string vazio
 	while(flag != 0)
 	{
@@ -43,7 +43,7 @@ int main()
 	 	}
  		
  	}
- 	printf("Finalizando iteracao...");
+// 	printf("Finalizando iteracao...");
 	return 0;
 
 }
