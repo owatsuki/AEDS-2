@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-int count(int posi_atual, char str[])				//recursao para contagem percorrendo array 
+int count(char str[])				//recursao para contagem percorrendo array 
 {
 	if(*str == '\0')return 0;						//condicao de parada recursiva
-	else return (posi_atual + count(posi_atual, str + 1));
+	else return (1 + count(str + 1));
 }
 void swap(char *str, int i, int posi_f) 			//funcao para trocar os elementos de posicao
 {													//manipulacao de ponteiros para percorrer string
@@ -30,15 +30,14 @@ int main()
  	int flag = 1; 
 // 	printf("Iniciando iteracao...\n");
 // 	printf("Digite uma palavra ou frase(ou fim para interromper):\n");
-	scanf("%s[^\n]", string);	
 	while(flag != 0)
 	{
+		scanf(" %[^\n]", string);	
 	 	if((string [0] == 'f' || string[0] == 'F') && (string[1] == 'i' || string[1] == 'I') && (string[2] == 'm' || string[2] == 'M')) flag = 0;	 //verifica se string inserida é "fim"
 	 	else
 	 	{
-			n = (count(1, string)) - 1;				//faz chamada da recursao para contagem do tamanho de string
+			n = count(string)- 1;				//faz chamada da recursao para contagem do tamanho de string
  			printf("%s\n", inverte(n, string));		//printa a string ivertida retornada pela função iterativa
-			scanf("%s[^\n]", string);	
 	 	}
  		
  	}
